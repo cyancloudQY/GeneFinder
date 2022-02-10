@@ -10,7 +10,7 @@ def main():
     six_orfs = six_open_reading_frames(DNA_sequence)  # find the six open reading frames of the given sequence
     possible_gene_list = six_orfs_genes(six_orfs)  # find the possible gene DNA sequence
 
-    longest_gene_dna = max(possible_gene_list)  # longest DNA sequence
+    longest_gene_dna = str(max(possible_gene_list, key = len))  # longest DNA sequence
     longest_gene_rna = transcription(longest_gene_dna)  # longest DNA sequence transcript to RNA sequence
     longest_gene_aa = translation(longest_gene_rna)  # longest DNA sequence translate to amino acid sequence
 
@@ -26,7 +26,8 @@ def main():
     print('The protein sequence of the gene is:')
     print(longest_gene_aa)
 
-    f = open('Results/results_'+file_name,'w')
+    file_name_process = file_name.replace('/', '-')
+    f = open('Results/results_'+file_name_process,'w')
     f.write('The file is the result of the gene finder program on ' + file_name + '\n')
     f.write('\n')
     f.write('The DNA sequence of longest possible gene is: ' + longest_gene_dna + '\n')

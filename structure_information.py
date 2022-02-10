@@ -5,6 +5,7 @@ DNA_complementary = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C'}
 
 # Use Dictionary to store the information of codon table.
 # The 3-letter codon can be converted to the single letter amino acid in this way
+# '*' is the stop codon
 Codon_table = {
     "GCU": "A", "GCC": "A", "GCA": "A", "GCG": "A",
     "UGU": "C", "UGC": "C",

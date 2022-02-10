@@ -1,0 +1,5 @@
+The file is the result of the gene finder program on trial_files/test_seq_midterm1_2.txt
+
+The DNA sequence of longest possible gene is: ATGCATTTATCTAGATAG
+The mRNA sequence of the gene is: AUGCAUUUAUCUAGAUAG
+The protein sequence of the gene is: MHLSR*

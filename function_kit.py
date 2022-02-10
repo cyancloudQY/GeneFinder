@@ -66,15 +66,18 @@ def six_open_reading_frames(sequence: str) -> list:
 
 def gene_finder(sequence: str) -> str:
     """
-    Identify possible "gene" from a DNA sequence.
+    Identify the longest possible "gene" from a DNA sequence.
 
     Principle: A gene always has a start codon and a stop codon.
 
     Methods:
         1. Find the 1st ATG (start codon) in the open reading frame, representing the start of a gene.
-        2. Identify the TAA,TAG,TGA codon, meaning the end of a gene.
+        2. Identify the TAA,TAG,TGA codon after this start codon, meaning the end of a gene.
         3. The sequence between the ATG (include ATG) and the stop codon should be the sequence of a gene.
+        4. Identify the if there is a 2nd ATG after the 1st ATG. If there is, repeat step 1 to 3.
+        5. Return the longest gene sequence
     """
+    gene_sequence_list = []
     gene_sequence = ''
     for i in range(0, len(sequence) - 2, 3):
         three_bases = sequence[i:i + 3]
@@ -84,7 +87,12 @@ def gene_finder(sequence: str) -> str:
                 if three_bases_2 not in ['TGA', 'TAA', 'TAG']:
                     gene_sequence += three_bases_2
                 else:
-                    return gene_sequence
+                    gene_sequence += three_bases_2
+                    gene_sequence_list.append(gene_sequence)
+                    gene_sequence = ''
+                    break
+    if gene_sequence_list:
+        return max(gene_sequence_list, key = len)
 
 
 def six_orfs_genes(six_orfs: list) -> list:

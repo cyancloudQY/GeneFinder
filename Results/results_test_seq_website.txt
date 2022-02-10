@@ -1,5 +1,0 @@
-The file is the result of the gene finder program on test_seq_website.txt
-
-The DNA sequence of longest possible gene is: ATGAAATTTGGGCCCAGAGCTCCGGGTAGCGCGTTACAT
-The mRNA sequence of the gene is: AUGAAAUUUGGGCCCAGAGCUCCGGGUAGCGCGUUACAU
-The protein sequence of the gene is: MKFGPRAPGSALH

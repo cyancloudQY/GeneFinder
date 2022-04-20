@@ -8,7 +8,7 @@ GeneFinder is written in Python 3.8.
 ### How to Run this Program
 1. Download the project repository. There is no need to install the program. However, python must be installed. 
 2. Open any command line tool (CMD, Git Bash, Terminal, etc). Move to the directory of this project.
-    `cd DirectoryWhereYouPutTheProjectFolder/ECS129_Project5_GeneFinder`  
+    `cd DirectoryWhereYouPutTheProjectFolder/GeneFinder`  
 3. The input file should be a txt file that contains the DNA sequence in a form of
 `5' TargetDNASequence 3'`
  The first three and the last three index of the sequence      should be "5' " and " 3'", or there must be **three spaces before and after** the real sequence.
